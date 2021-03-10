@@ -34,7 +34,15 @@ const popularGames = `games?dates=${lastYear},${currentDate}&ordering=-rating&pa
 const upcomingGames = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
 const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`
 
-//expoprt to the URL
+//export to the URL
 export const popularGamesURL = () => `${BASE_URL}${popularGames}`;
 export const upcomingGamesURL = () => `${BASE_URL}${upcomingGames}`;
 export const newGamesURL = () => `${BASE_URL}${newGames}`;
+
+
+
+//Game Details for Screenshot, Store, and resulted search
+export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}`;
+export const gameScreenshotURL = (game_id) => `${base_url}games/${game_id}/screenshots`;
+export const gameStoresURL = (game_id) => `${base_url}games/${game_id}/stores`;
+export const searchGameURL = (game_name) => `${base_url}games?search=${game_name}&page_size=12`;
