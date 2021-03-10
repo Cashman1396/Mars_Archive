@@ -42,7 +42,7 @@ export const newGamesURL = () => `${BASE_URL}${newGames}`;
 
 
 //Game Details for Screenshot, Store, and resulted search
-export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}`;
-export const gameScreenshotURL = (game_id) => `${base_url}games/${game_id}/screenshots`;
-export const gameStoresURL = (game_id) => `${base_url}games/${game_id}/stores`;
-export const searchGameURL = (game_name) => `${base_url}games?search=${game_name}&page_size=12`;
+export const gameDetailsURL = (game_id) => `${BASE_URL}games/${game_id}`;
+export const gameScreenshotURL = (game_id) => `${BASE_URL}games/${game_id}/screenshots`;
+export const gameStoresURL = (game_id) => `${BASE_URL}games/${game_id}/stores`;
+export const searchGameURL = (game_name) => `${BASE_URL}games?search=${game_name}&page_size=12`;
