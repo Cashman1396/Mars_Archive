@@ -48,4 +48,4 @@ const Game = ({name, released, image, id}) => {
         )
 }
 
-export default Game
+export default Game;
