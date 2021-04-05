@@ -12,8 +12,10 @@ import xbox from '../img/xbox.svg';
 import nintendo from '../img/switch.svg';
 
 //Rating
+import styled from 'styled-components'
 import starEmpty from '../img/star-empty.png';
 import starFull from '../img/star-full.png'
+import { motion } from 'framer-motion';
 
 
 const CardShadow = styled(motion.div)`
@@ -98,7 +100,7 @@ const GameInfo = ({pathId}) => {
     };
 
 
-    const getRating= () => {
+    const getRating = () => {
         const stars = [];
         const rating = Math.floor(game.rating);
         for(let i = 1; i <= 5; i++){
@@ -144,6 +146,52 @@ const GameInfo = ({pathId}) => {
         }
     }
 }
+
+//Data 
+const { game, screen, isLoading } = useSelector((state) => state.detail);
+console.log(game.stores);
+return (
+    <>
+     {!isLoading && (
+        <CardShadow className='shadow' onClick={exitDetailHandler}>
+            <Detail layoutId={pathId}>
+                <Stats><div className="rating">
+                        <motion.h3 layoutId={`title${pathId}`}>{game.name}</motion.h3>
+                        <p>Rating: {game.rating}/ 5</p>
+                        {getStars()}
+                        </div>
+                        <Info>
+                            <h3>Platforms</h3>
+                            <Platforms>
+                                {game.platform.map((data) => (
+                                    <img
+                                    alt={data.platform.id}
+                                    key={data.platform.id}
+                                    src={getPlatform(data.platform.name)}></img>
+                                ))}
+                            </Platforms>
+                        </Info>
+                </Stats>
+                <Media>
+                    <motion.img 
+                    layoutId={`image ${pathId}`}
+                    src={smallImage(game.background_image, 1280)} 
+                    alt={game.background_image}
+                    ></motion.img>
+                </Media>
+            </Detail>
+        </CardShadow>
+     )}
+        
+
+
+
+
+    </>
+
+
+
+)
 
 
 export default GameInfo
