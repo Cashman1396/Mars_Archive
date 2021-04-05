@@ -10,6 +10,8 @@ import playstation from '../img/sony.svg';
 import steam from '../img/steam.svg';
 import xbox from '../img/xbox.svg';
 import nintendo from '../img/switch.svg';
+import apple from '../img/apple.svg';
+import epic from '../img/epic.svg';
 
 //Rating
 import styled from 'styled-components'
