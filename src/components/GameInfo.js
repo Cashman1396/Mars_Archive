@@ -144,3 +144,6 @@ const GameInfo = ({pathId}) => {
         }
     }
 }
+
+
+export default GameInfo
