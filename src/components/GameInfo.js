@@ -145,7 +145,7 @@ const GameInfo = ({pathId}) => {
                 return gamepad;
         }
     }
-}
+
 
 //Data 
 const { game, screen, isLoading } = useSelector((state) => state.detail);
@@ -158,7 +158,7 @@ return (
                 <Stats><div className="rating">
                         <motion.h3 layoutId={`title${pathId}`}>{game.name}</motion.h3>
                         <p>Rating: {game.rating}/ 5</p>
-                        {getStars()}
+                        {getRating()}
                         </div>
                         <Info>
                             <h3>Platforms</h3>
@@ -179,19 +179,22 @@ return (
                     alt={game.background_image}
                     ></motion.img>
                 </Media>
+                <Description>
+                    <p>{game.description_raw}</p>
+                </Description>
+                <div class="gallery">
+                    {screen.results.map((screen) => (
+                        <img src={smallImage(screen.image, 1280)} alt="" />
+                    ))}
+                </div>
             </Detail>
         </CardShadow>
      )}
-        
-
-
-
-
     </>
 
+    )    
+ }
 
-
-)
 
 
 export default GameInfo
