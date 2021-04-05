@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Home from './pages/Home';
+import AllStyles from './components/AllStyles';
+import { Route } from 'react-router-dom';
+import GameInfo from './components/GameInfo'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AllStyles/>
+      <Navbar />
+      <Route path={['/game/:id', "/"]}> 
+      <Home />
+      </Route>
     </div>
-  );
+  )
 }
 
 export default App;
