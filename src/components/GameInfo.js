@@ -2,21 +2,21 @@ import React from 'react';
 // Redux stuff
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom';
-import {smallImage} from '../utils';
+import {smallImage} from '../util';
 
 //Assets
-import controller from '../img/controller.svg';
-import playstation from '../img/sony.svg';
-import steam from '../img/steam.svg';
-import xbox from '../img/xbox.svg';
-import nintendo from '../img/switch.svg';
-import apple from '../img/apple.svg';
-import epic from '../img/epic.svg';
+import controller from '../assets/controller.svg';
+import playstation from '../assets/sony.svg';
+import steam from '../assets/steam.svg';
+import xbox from '../assets/xbox.svg';
+import nintendo from '../assets/switch.svg';
+import apple from '../assets/apple.svg';
+import epic from '../assets/epic.svg';
 
 //Rating
 import styled from 'styled-components'
-import starEmpty from '../img/star-empty.png';
-import starFull from '../img/star-full.png'
+import starEmpty from '../assets/star-empty.png';
+import starFull from '../assets/star-full.png'
 import { motion } from 'framer-motion';
 
 
@@ -132,7 +132,6 @@ const GameInfo = ({pathId}) => {
                 return controller;
          }
     }
-
     const getStores = (store) => {
         switch(store) {
             case "PlayStation Store":
@@ -144,10 +143,9 @@ const GameInfo = ({pathId}) => {
             case "Xbox Store":
                 return xbox;
             default:
-                return gamepad;
+                return controller;
         }
     }
-
 
 //Data 
 const { game, screen, isLoading } = useSelector((state) => state.detail);

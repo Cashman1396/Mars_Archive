@@ -1,25 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'App.js';
-import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './reducers';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import { BrowserRouter } from 'react-router-dom';
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import { combineReducers } from "redux";
+import gamesReducer from './gamesReducer';
+import detailReducer from './detailReducer';
 
-const store = createStore (
-    rootReducer, composeEnhancer(applyMiddleware(thunk))
-)
+const rootReducer = combineReducers({
+    games: gamesReducer, 
+    detail: detailReducer,
+});
 
-ReactDOM.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <BrowserRouter>
-        <App />
-        </BrowserRouter>
-      </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
+export default rootReducer;

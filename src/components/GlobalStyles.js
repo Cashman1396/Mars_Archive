@@ -1,7 +1,7 @@
-import {createAllStyle} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 
 
-const AllStyles = createAllStyle`
+const GlobalStyles = createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
@@ -46,4 +46,4 @@ const AllStyles = createAllStyle`
     }
 `;
 
-export default AllStyles;
+export default GlobalStyles;

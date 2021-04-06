@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import Home from './pages/Home';
-import AllStyles from './components/AllStyles';
-import { Route } from 'react-router-dom';
 import GameInfo from './components/GameInfo'
+import GlobalStyles from './components/GlobalStyles';
+import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div className="App">
-      <AllStyles/>
+      <GlobalStyles/>
       <Navbar />
       <Route path={['/game/:id', "/"]}> 
       <Home />

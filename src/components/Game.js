@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { useDispatch } from 'react-redux';
 import { loadDetail } from '../actions/detailAction.js'
 import { Link } from 'react-router-dom'
-import { smallImage } from '../utils'
+import { smallImage } from '../util'
 import { popup } from '../components/Animate'
 
 
